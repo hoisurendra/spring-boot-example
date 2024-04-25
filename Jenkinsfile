@@ -25,6 +25,18 @@ pipeline {
                 sh 'mvn install'
             }
         }
+
+        stage('Docker Image Build') {
+            steps {
+                sh 'docker build -t custom-nginx-image .'
+            }
+        }
+
+        stage('Docker Container Run') {
+            steps {
+                sh 'docker run -d -p 8080:8080 custom-nginx-image'
+            }
+        }
     }
 
     post {
