@@ -20,12 +20,6 @@ pipeline {
             }
         }
 
-        stage('Install') {
-            steps {
-                sh 'mvn install'
-            }
-        }
-
         stage('Docker Image Build') {
             steps {
                 sh 'docker build -t custom-nginx-image .'
