@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.5</version> <!-- Change to a compatible version -->
+		<version>2.5.6</version> <!-- Change to a compatible version -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hitachi</groupId>
