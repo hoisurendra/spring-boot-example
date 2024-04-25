@@ -1,3 +1,4 @@
+
 FROM khipu/openjdk17-alpine
 
 WORKDIR /app
