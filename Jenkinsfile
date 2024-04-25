@@ -2,9 +2,27 @@ pipeline {
     agent any
 
     stages {
-        stage('Maven Build Stage') {
+        stage('Clean') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+
+        stage('Install') {
+            steps {
+                sh 'mvn install'
             }
         }
     }
@@ -18,4 +36,4 @@ pipeline {
             echo 'Build is Failure'
         }
     }
- }
+}
