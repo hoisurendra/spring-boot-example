@@ -34,7 +34,7 @@ pipeline {
 
         stage('Docker Container Run') {
             steps {
-                sh 'docker run -d -p 8080:8080 custom-nginx-image'
+                sh 'docker run -d -p 8000:8000 custom-nginx-image'
             }
         }
     }
