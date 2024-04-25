@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.5</version>
+		<version>3.2.5</version> <!-- Update to the appropriate version -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hitachi</groupId>
@@ -17,11 +17,11 @@
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+		<!-- Add your dependencies here -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -59,4 +59,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
