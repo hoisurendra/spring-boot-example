@@ -1,4 +1,4 @@
-FROM khipu/openjdk17-alpine
+FROM nginx
 
 WORKDIR /app
 
