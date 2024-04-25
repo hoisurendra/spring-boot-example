@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.5</version> <!-- Change to a compatible version -->
+		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hitachi</groupId>
@@ -14,7 +14,7 @@
 	<name>helloworld</name>
 	<description>Basic Spring Boot for Jenkins Pipeline Build</description>
 	<properties>
-		<java.version>11</java.version> <!-- Change to a compatible version -->
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -46,13 +46,17 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
-					<compilerArguments>
-						<source>11</source> <!-- Change to a compatible version -->
-						<target>11</target> <!-- Change to a compatible version -->
-					</compilerArguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
