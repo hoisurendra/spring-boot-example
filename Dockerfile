@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim
+FROM khipu/openjdk17-alpine
 
 WORKDIR /app
 
