@@ -2,33 +2,32 @@ pipeline {
     agent any
 
     stages {
-        stage('Clean') {
+        stage('Clone Repository') {
             steps {
-                sh 'mvn clean'
+                git 'https://github.com/hoisurendra/spring-boot-example.git'
             }
         }
 
-        stage('Compile') {
+        stage('Build') {
             steps {
-                sh 'mvn compile'
+                script {
+                    sh 'mvn clean install -DskipTests'
+                }
             }
         }
 
-        stage('Package') {
+        stage('Test') {
             steps {
-                sh 'mvn package'
+                script {
+                    sh 'mvn test'
+                }
             }
         }
 
-        stage('Docker Image Build') {
+        stage('Publish Results') {
             steps {
-                sh 'docker build -t custom-nginx-image .'
-            }
-        }
-
-        stage('Docker Container Run') {
-            steps {
-                sh 'docker run -d -p 8000:8000 custom-nginx-image'
+                archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
+                junit '**/target/surefire-reports/*.xml'
             }
         }
     }
