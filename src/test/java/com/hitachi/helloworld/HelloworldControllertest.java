@@ -11,9 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureMockMvc
 // @ExtendWith(SpringExtension.class)
 // @WebMvcTest(HelloWorldController.class)
-public class HelloworldControllertest {
-
-  
+public class HelloworldControllertest { 
  
     @Autowired
     private MockMvc mockMvc;
@@ -21,9 +19,10 @@ public class HelloworldControllertest {
     // @MockBean
     // private AdminService adminService;
   
-     @Testpublic
-    void testPrintHello() throwsException {        
-      mockMvc.perform(get("/hello"))
-       .andExpect(status()
-       .isOk()).andExpect(content()
-       .string("Hi Hello, Welcome to Web Page deployed using Jenkins Pipeline & Docker")); }}
+     @Test
+     public void testPrintHello() throwsException {        
+      mockMvc.perform(get("/welcome"))
+       .andExpect(status().isOk())
+       .andExpect(content().string("Hi Hello, Welcome to Web Page deployed using Jenkins Pipeline & Docker")); 
+    }
+}
