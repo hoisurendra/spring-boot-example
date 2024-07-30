@@ -7,14 +7,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc; 
 
 
-@SpringBootTest
-@AutoConfigureMockMvc
-// @ExtendWith(SpringExtension.class)
-// @WebMvcTest(HelloWorldController.class)
+// @SpringBootTest
+// @AutoConfigureMockMvc
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(HelloWorldController.class)
 public class HelloworldControllertest { 
  
     @Autowired
-    private MockMvc mockMvc;
+    public MockMvc mockMvc;
  
     // @MockBean
     // private AdminService adminService;
