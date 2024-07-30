@@ -20,7 +20,7 @@ public class HelloworldControllertest {
     // private AdminService adminService;
   
      @Test
-     public void testPrintHello() throwsException {        
+     public void testPrintHello() throws Exception {        
       mockMvc.perform(get("/welcome"))
        .andExpect(status().isOk())
        .andExpect(content().string("Hi Hello, Welcome to Web Page deployed using Jenkins Pipeline & Docker")); 
